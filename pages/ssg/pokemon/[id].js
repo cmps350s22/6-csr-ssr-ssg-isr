@@ -6,7 +6,7 @@ import styles from "../../../styles/Details.module.css";
 
 export async function getStaticPaths() {
   const resp = await fetch(
-    "http://localhost:3000/pokemons/all.json"
+    "https://raw.githubusercontent.com/cmps350s22/6-csr-ssr-ssg-isr/main/public/pokemons/all.json"
   );
   const pokemon = await resp.json();
 
@@ -20,14 +20,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const resp = await fetch(
-    `http://localhost:3000/pokemons/${params.id}.json`
+    `https://raw.githubusercontent.com/cmps350s22/6-csr-ssr-ssg-isr/main/public/pokemons/${params.id}.json`
   );
 
   return {
     props: {
       pokemon: await resp.json(),
     },
-    revalidate: 60,
+    revalidate: 60
   };
 }
 

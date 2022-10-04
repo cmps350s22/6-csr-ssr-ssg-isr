@@ -6,7 +6,7 @@ import styles from "../../styles/Home.module.css";
 
 export async function getStaticProps() {
   const resp = await fetch(
-    "http://localhost:3000/pokemons/all.json"
+    "https://raw.githubusercontent.com/cmps350s22/6-csr-ssr-ssg-isr/main/public/pokemons/all.json"
   );
 
   return {
