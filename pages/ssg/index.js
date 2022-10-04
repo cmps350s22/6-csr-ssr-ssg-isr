@@ -11,7 +11,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pokemons: await resp.json(),
+      pokemons: await resp.json()
     },
   };
 }
